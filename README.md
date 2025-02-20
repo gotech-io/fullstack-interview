@@ -6,6 +6,8 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Fastify](https://fastify.dev/)
 - [Drizzle ORM](https://orm.drizzle.team/docs/overview)
+- [React](https://react.dev/)
+- [MUI](https://mui.com/)
 
 ## Install NVM
 
