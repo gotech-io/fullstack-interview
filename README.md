@@ -75,6 +75,10 @@ $ pnpm dev:synchronizer
 
 _in vscode, you have settings for a debugger of both_
 
+### Frontend
+
+http://127.0.0.1:3000
+
 ### Swagger
 
 http://127.0.0.1:8000/docs
