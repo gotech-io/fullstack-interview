@@ -1,0 +1,52 @@
+{
+  "version": "0.3.0",
+  "configurations": [
+    {
+      "name": "Debug: Api",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "pnpm",
+      "runtimeVersion": "22.1.0",
+      "runtimeArgs": ["run", "dev:api"],
+    },
+    {
+      "name": "Debug: Data Synchronizer",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "pnpm",
+      "runtimeVersion": "22.1.0",
+      "runtimeArgs": ["run", "dev:synchronizer"],
+    },
+    {
+      "name": "Attach Debugger: API",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**", "/**/node_modules/**"],
+      "restart": {
+        "delay": 1000,
+        "maxAttempts": 10
+      }
+    },
+    {
+      "name": "Attach Debugger: Data Synchronizer",
+      "type": "node",
+      "request": "attach",
+      "port": 9230,
+      "skipFiles": ["<node_internals>/**", "/**/node_modules/**"],
+      "restart": {
+        "delay": 1000,
+        "maxAttempts": 10
+      }
+    },
+    {
+      "name": "Debug Frontend",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/apps/frontend/src"
+    }
+  ]
+}

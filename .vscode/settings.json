@@ -1,0 +1,20 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "editor.formatOnSave": true,
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "typescript.tsserver.watchOptions": {
+    "watchFile": "useFsEvents"
+  },
+  "github-actions.workflows.pinned.workflows": [".github/workflows/docker-build-push-ecr.yaml"]
+}

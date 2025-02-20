@@ -1,0 +1,27 @@
+{
+  "name": "youcc",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:api": "turbo dev --filter=@youcc/api",
+    "dev:fe": "turbo dev --filter=@youcc/frontend",
+    "dev:synchronizer": "pnpm --filter=api dev:synchronizer",
+    "db:generate": "pnpm --filter=api db:generate",
+    "db:migrate": "pnpm --filter=api db:migrate",
+    "db:studio": "pnpm --filter=api db:studio",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint": "^9.20.0",
+    "prettier": "^3.5.0",
+    "syncpack": "^12.3.2",
+    "tsx": "^4.19.0",
+    "turbo": "^2.1.1"
+  },
+  "packageManager": "pnpm@9.3.0",
+  "engines": {
+    "node": ">=22.1.0"
+  }
+}

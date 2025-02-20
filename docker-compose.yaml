@@ -1,0 +1,37 @@
+services:
+  api-postgresql:
+    container_name: youcc-api-postgresql
+    image: postgres:17.2-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: Aa123456
+      POSTGRES_USER: youcc_api_db_user
+      POSTGRES_DB: youcc_api_db
+    ports:
+      - 5432:5432
+    volumes:
+      - youcc-postgres-data:/var/lib/postgresql/data
+    networks:
+      - youcc-api-network
+
+  pgadmin:
+    container_name: youcc-pgadmin4
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@youcc.net
+      PGADMIN_DEFAULT_PASSWORD: Aa123456
+    ports:
+      - 8888:80
+    volumes:
+      - youcc-pgadmin-data:/var/lib/pgadmin
+    networks:
+      - youcc-api-network
+
+volumes:
+  youcc-postgres-data:
+  youcc-pgadmin-data:
+
+networks:
+  youcc-api-network:
+    driver: bridge
